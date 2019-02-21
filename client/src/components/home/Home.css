@@ -1,0 +1,59 @@
+/* 
+    HOME CSS 
+*/
+
+/* 
+    === ALL ===
+*/
+div.home {
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+h1 { 
+    margin:0;
+    line-height: 1;
+}
+h2.subtitle {
+    margin: 5px 0; 
+}
+
+/* 
+=== MOBILE ===
+*/
+@media screen and (max-width: 768px) {
+    h1 { 
+        font-size: 2.5rem;
+    }
+    h2.subtitle {
+        padding-left: 0.1rem;
+        font-size: 0.8rem;
+    }
+}
+
+/* 
+    === TABLET ===
+*/
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    h1 { 
+        font-size: 4rem;
+    }
+    h2.subtitle {
+        padding-left: .2rem;
+        font-size: 1.2rem;
+    }
+}
+
+/*
+    === DESKTOP ===
+*/
+@media screen and (min-width: 1200px) {
+    h1 { 
+        font-size: 7rem;
+    }
+    h2.subtitle {
+        padding-left: .4rem;
+    }
+}
