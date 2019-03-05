@@ -3,35 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-<<<<<<< HEAD
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
-=======
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
->>>>>>> 0ac594496c40acb425bbae526218a4ad6ca148c2
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-<<<<<<< HEAD
     "concurrently": "^4.1.0",
     "express": "^4.16.4",
     "mongoose": "^5.4.17",
     "nodemon": "^1.18.10"
   }
-=======
-    "express": "^4.16.4"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iamfaycal/portfolio.git"
-  },
-  "bugs": {
-    "url": "https://github.com/iamfaycal/portfolio/issues"
-  },
-  "homepage": "https://github.com/iamfaycal/portfolio#readme",
-  "description": ""
->>>>>>> 0ac594496c40acb425bbae526218a4ad6ca148c2
 }
