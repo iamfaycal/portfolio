@@ -1,6 +1,10 @@
 /*
     NAVIGATION
 */
+nav {
+    display: flex;
+    justify-content: space-between;
+}
 nav ul {
     display: flex;
     list-style: none;
