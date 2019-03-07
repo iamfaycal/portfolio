@@ -19,7 +19,7 @@ class App extends Component {
         return (
             <Router>
                 <div className="wrapper">
-                    {window.location.pathname == "/en" ? <NavEn /> : <Nav />}
+                    {window.location.pathname === "/en" ? <NavEn /> : <Nav />}
                     <Route exact path="/" component={Home} />
                     <Route path="/a-propos" component={About} />
                     <Route path="/realisations" component={Work} />
