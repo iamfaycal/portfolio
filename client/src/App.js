@@ -11,7 +11,7 @@ import AboutEn from './components/about/AboutEn'
 
 import Nav from './components/nav/Nav';
 import NavEn from './components/nav/NavEn';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import './App.css';
 
 class App extends Component {
@@ -19,7 +19,10 @@ class App extends Component {
         return (
             <Router>
                 <div className="wrapper">
-                    {window.location.pathname === "/en" ? <NavEn /> : <Nav />}
+                    <Switch>
+                        <Route path="/en" component={NavEn}/>
+                        <Route path="/" component={Nav}/>
+                    </Switch>
                     <Route exact path="/" component={Home} />
                     <Route path="/a-propos" component={About} />
                     <Route path="/realisations" component={Work} />

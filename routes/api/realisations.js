@@ -13,6 +13,9 @@ router.get('/', (req, res) => {
         .then(realisations => res.json(realisations))
 });
 
+// @route   POST api/realisations
+// @desc    POST a realisation
+// @access  Public
 router.post('/', (req, res) => {
     const newReal = new Realisation({
         title: req.body.title,
