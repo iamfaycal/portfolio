@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "test": "jest --watch *.test.js --coverage",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
@@ -10,9 +11,25 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "concurrently": "^4.1.0",
     "express": "^4.16.4",
-    "mongoose": "^5.4.17",
+    "mongoose": "^5.4.17"
+  },
+  "devDependencies": {
+    "concurrently": "^4.1.0",
+    "jest": "^24.5.0",
     "nodemon": "^1.18.10"
+  },
+  "jest" : {
+    "testPathIgnorePatterns": [
+        "/node_modules/",
+        "/client/"
+    ],
+    "collectCoverageFrom": [
+        "**/*.{js}",
+        "!**/node_modules/**",
+        "!**/client/**",
+        "!**/coverage/**"
+    ],
+    "testEnvironment": "node"
   }
 }
