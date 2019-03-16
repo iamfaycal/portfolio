@@ -3,7 +3,7 @@ const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const port = process.env.PORT || 5000;
-const db = require('./config').mongoURI;
+const db = require('../config').mongoURI;
 
 const realisations = require('./routes/api/realisations');
 const login = require('./routes/api/login');
