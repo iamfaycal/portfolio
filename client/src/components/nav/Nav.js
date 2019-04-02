@@ -7,23 +7,13 @@ export default class Nav extends Component {
         return (
             <nav>
                 <ul>
-                    <li>
-                        <Link to="/">Fayçal</Link>
-                    </li>
+                    <li><Link to="/">Fayçal</Link></li>
                     <li className="separator"> | </li>
-                    <li>
-                        <Link to="/realisations">Réalisation</Link>
-                    </li>
-                    <li>
-                        <Link to="/a-propos">À Propos</Link>
-                    </li>
+                    <li><Link to="/realisations">Réalisation</Link></li>
+                    <li><Link to="/a-propos">À Propos</Link></li>
                 </ul>
                 <ul>
-                    <li>
-                        <small>
-                            <Link to="/en">EN</Link> | <Link to="/">FR</Link>
-                        </small>
-                    </li>
+                    <li><small><Link to="/en">EN</Link> | <Link to="/">FR</Link></small></li>
                 </ul>
             </nav>
         );
