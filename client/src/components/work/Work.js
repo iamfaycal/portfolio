@@ -1,78 +1,63 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./Work.css";
 
 export default class Work extends Component {
+	state = {
+		projets: null
+	};
+	componentDidMount() {
+		const url = "https://faycalhammoudi.fr/wp-json/wp/v2/project";
+		fetch(url)
+			.then(res => res.json())
+			.then(projets => this.setState({ projets }));
+	}
 	render() {
-		return (
-			<div>
-				<h2 id="pageTitle">Réalisations</h2>
-				<div id="realisations-container">
-					<div className="realisation">
-						<div className="realisation-inner">
-							<div className="realisation-text">
-								<h3>Ma réalisation</h3>
-								<hr />
-								<h4>Une lègère description</h4>
-								<a href="#">Voir la suite &rarr;</a>
-							</div>
-							<div className="realisation-image-container">
-								<img
-									src="https://picsum.photos/640/360"
-									alt=""
-								/>
-							</div>
-						</div>
+		if (this.state.projets) {
+			return (
+				<div>
+					<div id="pageTitle">
+						<h2>Réalisations</h2>
 					</div>
-					<div className="realisation">
-						<div className="realisation-inner">
-							<div className="realisation-text">
-								<h3>Ma réalisation</h3>
-								<hr />
-								<h4>Une lègère description</h4>
-								<a href="#">Voir la suite &rarr;</a>
-							</div>
-							<div className="realisation-image-container">
-								<img
-									src="https://picsum.photos/640/360"
-									alt=""
-								/>
-							</div>
-						</div>
-					</div>
-					<div className="realisation">
-						<div className="realisation-inner">
-							<div className="realisation-text">
-								<h3>Ma réalisation</h3>
-								<hr />
-								<h4>Une lègère description</h4>
-								<a href="#">Voir la suite &rarr;</a>
-							</div>
-							<div className="realisation-image-container">
-								<img
-									src="https://picsum.photos/640/360"
-									alt=""
-								/>
-							</div>
-						</div>
-					</div>
-					<div className="realisation">
-						<div className="realisation-inner">
-							<div className="realisation-text">
-								<h3>Ma réalisation</h3>
-								<hr />
-								<h4>Une lègère description</h4>
-								<a href="#">Voir la suite &rarr;</a>
-							</div>
-							<div className="realisation-image-container">
-								<img
-									src="https://picsum.photos/640/360"
-									alt=""
-								/>
-							</div>
-						</div>
+					<div id="realisations-container">
+						{this.state.projets.map(projet => {
+							return (
+								<div className="realisation">
+									<div className="realisation-inner">
+										<div className="realisation-text">
+											<h3
+												dangerouslySetInnerHTML={{
+													__html:
+														projet.title.rendered
+												}}
+											>
+												{}
+											</h3>
+											<hr />
+											{/*<h4>Une lègère description</h4>*/}
+											<Link
+												to={`/realisations/${
+													projet.slug
+												}`}
+											>
+												Voir le projet &rarr;
+											</Link>
+										</div>
+										<div className="realisation-image-container">
+											<img
+												src={projet.acf.project_img}
+												alt=""
+											/>
+										</div>
+									</div>
+								</div>
+							);
+						})}
 					</div>
 				</div>
-			</div>
-		);
+			);
+		} else {
+			return "Loading";
+		}
 	}
 }

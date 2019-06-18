@@ -1,7 +1,24 @@
+/*
+    LISTE DES
+    REALISATIONS
+
+*/
+
 /* TITLE */
 #pageTitle {
-	font-size: 70px;
 	margin: 100px 0 80px;
+}
+#pageTitle a {
+	color: black;
+	text-decoration: none;
+	font-size: 18px;
+}
+#pageTitle a:hover {
+	text-decoration: underline;
+}
+#pageTitle h2 {
+	margin: 10px 0;
+	font-size: 70px;
 }
 
 /* REALISATIONS */
@@ -95,4 +112,34 @@
 	margin-left: -60px;
 	position: relative;
 	z-index: -1;
+}
+
+/*
+
+    UNE REALISATION
+
+*/
+#single-realisation > .single-realisation-inner {
+	display: flex;
+	justify-content: space-between;
+}
+#single-realisation > .single-realisation-inner > * {
+	width: 49%;
+}
+#single-realisation
+	> .single-realisation-inner
+	> .single-realisation-image-container
+	> img {
+	max-width: 100%;
+}
+#single-realisation > .single-realisation-inner > .single-realisation-text > a {
+	color: black;
+	text-decoration: none;
+	font-size: 15px;
+}
+#single-realisation
+	> .single-realisation-inner
+	> .single-realisation-text
+	> a:hover {
+	text-decoration: underline;
 }
