@@ -44,10 +44,16 @@ export default class Work extends Component {
 											</Link>
 										</div>
 										<div className="realisation-image-container">
-											<img
-												src={projet.acf.project_img}
-												alt=""
-											/>
+											<Link
+												to={`/realisations/${
+													projet.slug
+												}`}
+											>
+												<img
+													src={projet.acf.project_img}
+													alt=""
+												/>
+											</Link>
 										</div>
 									</div>
 								</div>
