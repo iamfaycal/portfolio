@@ -163,6 +163,9 @@
 	> img {
 	max-width: 100%;
 }
+#single-realisation > .single-realisation-inner > .single-realisation-text {
+	text-align: justify;
+}
 #single-realisation > .single-realisation-inner > .single-realisation-text > a {
 	color: black;
 	text-decoration: none;
