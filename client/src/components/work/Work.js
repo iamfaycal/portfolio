@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./Work.css";
+import Spinner from "../../assets/spinner.gif";
 
 export default class Work extends Component {
 	state = {
@@ -63,7 +64,16 @@ export default class Work extends Component {
 				</div>
 			);
 		} else {
-			return "Loading";
+			return (
+				<div>
+					<div id="pageTitle">
+						<h2>Réalisations</h2>
+					</div>
+					<div id="loading">
+						<img src={Spinner} alt="Loading..." />
+					</div>
+				</div>
+			);
 		}
 	}
 }

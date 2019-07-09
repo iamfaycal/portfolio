@@ -3,6 +3,7 @@ import React, { Component, lazy, Suspense } from "react";
 import Login from "./components/admin/login/Login";
 
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Spinner from "./assets/spinner.gif";
 import "./App.css";
 
 const Home = lazy(() => import("./components/home/Home"));
@@ -23,7 +24,17 @@ class App extends Component {
 		return (
 			<Router>
 				<div className="wrapper">
-					<Suspense fallback={<div>Chargement..</div>}>
+					<div id="loading">
+						<img src={Spinner} alt="Loading..." />
+					</div>
+					{/*
+                    <Suspense
+						fallback={
+							<div id="loading">
+								<img src={Spinner} alt="Loading..." />
+							</div>
+						}
+					>
 						<Switch>
 							<Route path="/en" component={NavEn} />
 							<Route path="/" component={Nav} />
@@ -37,7 +48,7 @@ class App extends Component {
 						<Route exact path="/en" component={HomeEn} />
 						<Route path="/en/about" component={AboutEn} />
 						<Route path="/en/work" component={WorkEn} />
-					</Suspense>
+					</Suspense>*/}
 				</div>
 			</Router>
 		);
