@@ -20,39 +20,39 @@ const Nav = lazy(() => import("./components/nav/Nav"));
 const NavEn = lazy(() => import("./components/nav/NavEn"));
 
 class App extends Component {
-	render() {
-		return (
-			<Router>
-				<div className="wrapper">
-					<div id="loading">
+  render() {
+    return (
+      <Router>
+        <div className="wrapper">
+          {/*<div id="loading">
 						<img src={Spinner} alt="Loading..." />
-					</div>
-					{/*
-                    <Suspense
-						fallback={
-							<div id="loading">
-								<img src={Spinner} alt="Loading..." />
-							</div>
-						}
-					>
-						<Switch>
-							<Route path="/en" component={NavEn} />
-							<Route path="/" component={Nav} />
-						</Switch>
-						<Route exact path="/" component={Home} />
-						<Route path="/a-propos" component={About} />
-						<Route exact path="/realisations" component={Work} />
-						<Route path="/realisations/:slug" component={Single} />
-						<Route path="/admin/login" component={Login} />
+					</div>*/}
 
-						<Route exact path="/en" component={HomeEn} />
-						<Route path="/en/about" component={AboutEn} />
-						<Route path="/en/work" component={WorkEn} />
-					</Suspense>*/}
-				</div>
-			</Router>
-		);
-	}
+          <Suspense
+            fallback={
+              <div id="loading">
+                <img src={Spinner} alt="Loading..." />
+              </div>
+            }
+          >
+            <Switch>
+              <Route path="/en" component={NavEn} />
+              <Route path="/" component={Nav} />
+            </Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/a-propos" component={About} />
+            <Route exact path="/realisations" component={Work} />
+            <Route path="/realisations/:slug" component={Single} />
+            <Route path="/admin/login" component={Login} />
+
+            <Route exact path="/en" component={HomeEn} />
+            <Route path="/en/about" component={AboutEn} />
+            <Route path="/en/work" component={WorkEn} />
+          </Suspense>
+        </div>
+      </Router>
+    );
+  }
 }
 
 export default App;
