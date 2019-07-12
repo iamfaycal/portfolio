@@ -1,0 +1,55 @@
+/*
+    ABOUT PAGE
+*/
+#about {
+	width: 50%;
+	margin: 60px auto 100px;
+}
+
+/* TITLE & MAIN PHOTO */
+.tilted {
+	animation: appear 0.5s ease-out forwards;
+	animation-delay: 0.5s;
+	transform: scale(1.2);
+	opacity: 0;
+	margin-bottom: 150px;
+}
+.tilted h1 {
+	font-size: 100px;
+}
+@keyframes appear {
+	from {
+		transform: scale(1.2);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1) rotate(-5deg);
+		opacity: 1;
+	}
+}
+
+/* TEXT */
+.text > h2.huge {
+	font-size: 50px;
+	opacity: 0;
+	animation: fadeInSkew 0.8s ease forwards;
+	animation-delay: 0.8s;
+}
+.text > .paragraph {
+	font-size: 25px;
+	line-height: 1.7;
+	opacity: 0;
+	animation: fadeInSkew 0.8s ease forwards;
+	animation-delay: 1s;
+}
+
+@keyframes fadeInSkew {
+	from {
+		transform: translateY(80px) skew(0, 5deg);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0) skew(0, 0);
+		opacity: 1;
+	}
+}

@@ -2,7 +2,7 @@ import React, { Component, lazy, Suspense } from "react";
 
 import Login from "./components/admin/login/Login";
 
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, /*Switch*/ } from "react-router-dom";
 import Spinner from "./assets/spinner.gif";
 import "./App.css";
 
@@ -17,7 +17,9 @@ const About = lazy(() => import("./components/about/About"));
 const AboutEn = lazy(() => import("./components/about/AboutEn"));
 
 const Nav = lazy(() => import("./components/nav/Nav"));
-const NavEn = lazy(() => import("./components/nav/NavEn"));
+//const NavEn = lazy(() => import("./components/nav/NavEn"));
+
+const Footer = lazy(() => import("./components/footer/Footer"));
 
 class App extends Component {
     render() {
@@ -31,10 +33,11 @@ class App extends Component {
                             </div>
                         }
                     >
-                        <Switch>
+                        {/* <Switch>
                             <Route path="/en" component={NavEn} />
                             <Route path="/" component={Nav} />
-                        </Switch>
+                        </Switch> */}
+                        <Nav />
                         <Route exact path="/" component={Home} />
                         <Route path="/a-propos" component={About} />
                         <Route exact path="/realisations" component={Work} />
@@ -44,6 +47,7 @@ class App extends Component {
                         <Route exact path="/en" component={HomeEn} />
                         <Route path="/en/about" component={AboutEn} />
                         <Route path="/en/work" component={WorkEn} />
+                        <Footer />
                     </Suspense>
                 </div>
             </Router>
