@@ -1,9 +1,16 @@
 /*
     ABOUT PAGE
 */
+
 #about {
-	width: 50%;
-	margin: 60px auto 100px;
+	max-width: 100%;
+	margin: 8vh auto 10vh;
+}
+@media screen and (min-width: 960px) {
+	#about {
+		max-width: 750px;
+		margin: 8vh auto 10vh;
+	}
 }
 
 /* TITLE & MAIN PHOTO */
@@ -12,10 +19,15 @@
 	animation-delay: 0.5s;
 	transform: scale(1.2);
 	opacity: 0;
-	margin-bottom: 150px;
+	margin-bottom: 10vh;
 }
 .tilted h1 {
-	font-size: 100px;
+	font-size: 10vw;
+}
+@media screen and (min-width: 960px) {
+	.tilted h1 {
+		font-size: 100px;
+	}
 }
 @keyframes appear {
 	from {
@@ -30,26 +42,30 @@
 
 /* TEXT */
 .text > h2.huge {
-	font-size: 50px;
+	font-size: 6vw;
 	opacity: 0;
 	animation: fadeInSkew 0.8s ease forwards;
 	animation-delay: 0.8s;
 }
+@media screen and (min-width: 960px) {
+	.text > h2.huge {
+		font-size: 50px;
+	}
+}
+
 .text > .paragraph {
-	font-size: 25px;
+	font-size: 3vw;
 	line-height: 1.7;
 	opacity: 0;
 	animation: fadeInSkew 0.8s ease forwards;
 	animation-delay: 1s;
 }
-
-@keyframes fadeInSkew {
-	from {
-		transform: translateY(80px) skew(0, 5deg);
-		opacity: 0;
-	}
-	to {
-		transform: translateX(0) skew(0, 0);
-		opacity: 1;
+.text > .paragraph > pre {
+	font-size: 2.5vw;
+}
+@media screen and (min-width: 960px) {
+	.text > .paragraph,
+	.text > .paragraph > pre {
+		font-size: 25px;
 	}
 }

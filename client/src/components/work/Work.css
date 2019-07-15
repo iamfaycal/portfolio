@@ -6,143 +6,162 @@
 
 /* TITLE */
 #pageTitle {
-  margin: 100px 0 80px;
+	margin: 100px 0 80px;
 }
 #pageTitle a {
-  color: black;
-  text-decoration: none;
-  font-size: 18px;
+	color: black;
+	text-decoration: none;
+	font-size: 18px;
 }
 #pageTitle a:hover {
-  text-decoration: underline;
+	text-decoration: underline;
 }
 #pageTitle h2 {
-  margin: 10px 0;
-  font-size: 70px;
+	margin: 10px 0;
+	font-size: 70px;
 }
 
 /* REALISATIONS */
 #realisations-container {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: space-between;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	justify-content: space-between;
 }
 #realisations-container > .realisation {
-  width: 100%;
-  margin-bottom: 70px;
+	width: 100%;
+	margin-bottom: 70px;
+	opacity: 0;
+	animation: fadeInSkew 0.5s ease forwards;
+	animation-delay: var(--delai);
 }
 @media screen and (min-width: 960px) {
-  #realisations-container {
-    flex-direction: row;
-  }
-  #realisations-container > .realisation {
-    width: 48%;
-  }
+	#realisations-container {
+		flex-direction: row;
+	}
+	#realisations-container > .realisation {
+		width: 48%;
+	}
 }
 #realisations-container > .realisation > .realisation-inner {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
-#realisations-container
-  > .realisation
-  > .realisation-inner
-  > .realisation-text {
-  width: 40%;
-  height: 250px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 
-  margin-top: 50px;
-  padding: 10px 30px;
-  background: #0c6980;
-  color: white;
-  position: relative;
-  z-index: 999;
+#realisations-container
+	> .realisation
+	> .realisation-inner
+	> .realisation-text {
+	width: 50%;
+	height: 200px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	margin-top: 30px;
+	padding: 10px 20px;
+	background: #0c6980;
+	color: white;
+	position: relative;
+	z-index: 999;
+}
+@media screen and (min-width: 960px) {
+	#realisations-container
+		> .realisation
+		> .realisation-inner
+		> .realisation-text {
+		width: 45%;
+		height: 250px;
+		padding: 10px 20px;
+	}
+}
+
+#realisations-container
+	> .realisation
+	> .realisation-inner
+	> .realisation-text
+	> hr {
+	width: 100%;
+	height: 4px;
+	border: 0;
+	background: white;
+	margin: 5px 0;
+}
+
+#realisations-container
+	> .realisation
+	> .realisation-inner
+	> .realisation-text
+	> h3 {
+	margin: 2px 0;
+	font-size: 4vw;
+}
+@media screen and (min-width: 960px) {
+	#realisations-container
+		> .realisation
+		> .realisation-inner
+		> .realisation-text
+		> h3 {
+		margin: 6px 0;
+		font-size: 30px;
+	}
+}
+
+#realisations-container
+	> .realisation
+	> .realisation-inner
+	> .realisation-text
+	> a {
+	color: white;
+	text-decoration: none;
+	font-size: 15px;
+	margin-top: 10px;
 }
 #realisations-container
-  > .realisation
-  > .realisation-inner
-  > .realisation-text
-  > hr {
-  width: 100%;
-  height: 4px;
-  border: 0;
-  background: white;
-  margin: 5px 0;
+	> .realisation
+	> .realisation-inner
+	> .realisation-text
+	> a:hover {
+	text-decoration: underline;
 }
 #realisations-container
-  > .realisation
-  > .realisation-inner
-  > .realisation-text
-  > h3 {
-  margin: 6px 0;
-  font-size: 40px;
+	> .realisation
+	> .realisation-inner
+	> .realisation-image-container {
+	display: flex;
+	width: 70%;
 }
 #realisations-container
-  > .realisation
-  > .realisation-inner
-  > .realisation-text
-  > h4 {
-  margin: 10px 0;
-  font-size: 20px;
+	> .realisation
+	> .realisation-inner
+	> .realisation-image-container
+	> a {
+	margin-left: -70px;
 }
 #realisations-container
-  > .realisation
-  > .realisation-inner
-  > .realisation-text
-  > a {
-  color: white;
-  text-decoration: none;
-  font-size: 15px;
-  margin-top: 10px;
+	> .realisation
+	> .realisation-inner
+	> .realisation-image-container
+	> a {
+	filter: saturate(0);
+	transition: filter 0.2s ease-in-out, transform 0.3s ease-in-out;
 }
 #realisations-container
-  > .realisation
-  > .realisation-inner
-  > .realisation-text
-  > a:hover {
-  text-decoration: underline;
+	> .realisation:hover
+	> .realisation-inner
+	> .realisation-image-container
+	> a {
+	filter: saturate(1);
+	transform: scale(1.1);
 }
 #realisations-container
-  > .realisation
-  > .realisation-inner
-  > .realisation-image-container {
-  display: flex;
-  width: 70%;
-}
-#realisations-container
-  > .realisation
-  > .realisation-inner
-  > .realisation-image-container
-  > a {
-  margin-left: -70px;
-}
-#realisations-container
-  > .realisation
-  > .realisation-inner
-  > .realisation-image-container
-  > a {
-  filter: saturate(0);
-  transition: filter 0.2s ease-in-out, transform 0.3s ease-in-out;
-}
-#realisations-container
-  > .realisation:hover
-  > .realisation-inner
-  > .realisation-image-container
-  > a {
-  filter: saturate(1);
-  transform: scale(1.1);
-}
-#realisations-container
-  > .realisation
-  > .realisation-inner
-  > .realisation-image-container
-  > a
-  > img {
-  width: 100%;
-  position: relative;
+	> .realisation
+	> .realisation-inner
+	> .realisation-image-container
+	> a
+	> img {
+	width: 100%;
+	position: relative;
 }
 
 /*
@@ -151,29 +170,29 @@
 
 */
 #single-realisation > .single-realisation-inner {
-  display: flex;
-  justify-content: space-between;
+	display: flex;
+	justify-content: space-between;
 }
 #single-realisation > .single-realisation-inner > * {
-  width: 49%;
+	width: 49%;
 }
 #single-realisation
-  > .single-realisation-inner
-  > .single-realisation-image-container
-  > img {
-  max-width: 100%;
+	> .single-realisation-inner
+	> .single-realisation-image-container
+	> img {
+	max-width: 100%;
 }
 #single-realisation > .single-realisation-inner > .single-realisation-text {
-  text-align: justify;
+	text-align: justify;
 }
 #single-realisation > .single-realisation-inner > .single-realisation-text > a {
-  color: black;
-  text-decoration: none;
-  font-size: 15px;
+	color: black;
+	text-decoration: none;
+	font-size: 15px;
 }
 #single-realisation
-  > .single-realisation-inner
-  > .single-realisation-text
-  > a:hover {
-  text-decoration: underline;
+	> .single-realisation-inner
+	> .single-realisation-text
+	> a:hover {
+	text-decoration: underline;
 }

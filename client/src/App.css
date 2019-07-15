@@ -16,3 +16,15 @@
 #loading img {
 	width: 100px;
 }
+
+/* ANIMATIONS */
+@keyframes fadeInSkew {
+	from {
+		transform: translateY(80px) skew(0, 5deg);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0) skew(0, 0);
+		opacity: 1;
+	}
+}

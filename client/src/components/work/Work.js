@@ -21,45 +21,44 @@ export default class Work extends Component {
                         <h2>réalisations</h2>
                     </div>
                     <div id="realisations-container">
-                        {this.state.projets.map(projet => {
-                            return (
-                                <div className="realisation">
-                                    <div className="realisation-inner">
-                                        <div className="realisation-text">
-                                            <h3
-                                                dangerouslySetInnerHTML={{
-                                                    __html:
-                                                        projet.title.rendered
-                                                }}
-                                            >
-                                                {}
-                                            </h3>
-                                            <hr />
-                                            {/*<h4>Une lègère description</h4>*/}
-                                            <Link
-                                                to={`/realisations/${
-                                                    projet.slug
-                                                    }`}
-                                            >
-                                                Voir le projet &rarr;
+                        {this.state.projets.map((projet, index) => (
+                            <div className="realisation" style={{ "--delai": (index * 0.2) + "s" }}>
+                                <div className="realisation-inner">
+                                    <div className="realisation-text">
+                                        <h3
+                                            dangerouslySetInnerHTML={{
+                                                __html:
+                                                    projet.title.rendered
+                                            }}
+                                        >
+                                            {}
+                                        </h3>
+                                        <hr />
+                                        {/*<h4>Une lègère description</h4>*/}
+                                        <Link
+                                            to={`/realisations/${
+                                                projet.slug
+                                                }`}
+                                        >
+                                            Voir le projet &rarr;
 											</Link>
-                                        </div>
-                                        <div className="realisation-image-container">
-                                            <Link
-                                                to={`/realisations/${
-                                                    projet.slug
-                                                    }`}
-                                            >
-                                                <img
-                                                    src={projet.acf.project_img}
-                                                    alt=""
-                                                />
-                                            </Link>
-                                        </div>
+                                    </div>
+                                    <div className="realisation-image-container">
+                                        <Link
+                                            to={`/realisations/${
+                                                projet.slug
+                                                }`}
+                                        >
+                                            <img
+                                                src={projet.acf.project_img}
+                                                alt=""
+                                            />
+                                        </Link>
                                     </div>
                                 </div>
-                            );
-                        })}
+                            </div>
+                        )
+                        )}
                     </div>
                 </div>
             );
