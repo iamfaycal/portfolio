@@ -12,7 +12,7 @@ export default class Nav extends Component {
                     </li>
                     <li className="separator"> | </li>
                     <li>
-                        <Link to="/realisations">réalisation</Link>
+                        <Link to="/realisations">réalisations</Link>
                     </li>
                     <li>
                         <Link to="/a-propos">à propos</Link>

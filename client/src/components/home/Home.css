@@ -20,7 +20,8 @@ h1 {
 	margin: 0;
 }
 h2.subtitle {
-	margin: 5px 0;
+	margin: 0;
+	line-height: 1.5;
 }
 
 /* ANIMATION */
@@ -33,22 +34,22 @@ h2.subtitle {
 }
 h1 .colorBox {
 	background-color: #0c6980;
-	height: 150px;
-	width: 1020px;
+	height: 115px;
+	width: 950px;
 	animation: 0.5s 2 alternate slidein;
-	animation-delay: 0.2s;
+	animation-delay: 0.7s;
 }
 h1 .text,
 h2 .text {
 	opacity: 0;
-	animation: showText 0s 1s forwards;
+	animation: showText 0s 1.2s forwards;
 }
 h2 .colorBox {
 	background-color: #2eb5e0;
 	height: 50px;
 	width: 370px;
 	animation: 0.3s 2 alternate slidein;
-	animation-delay: 0.5s;
+	animation-delay: 1s;
 }
 @keyframes slidein {
 	from {
@@ -71,12 +72,23 @@ h2 .colorBox {
 */
 @media screen and (max-width: 768px) {
 	h1 {
-		font-size: 2.5rem;
+		font-size: 8vw;
 		line-height: 1;
 	}
 	h2.subtitle {
-		padding-left: 0.1rem;
-		font-size: 0.8rem;
+		font-size: 3vw;
+		padding: 10px 0;
+		line-height: 1.2;
+	}
+	h1 .text,
+	h2 .text {
+		display: inline-block;
+		animation: none;
+		animation: fadeInSkew 0.8s ease forwards;
+	}
+	h1 .colorBox,
+	h2 .colorBox {
+		animation: none;
 	}
 }
 
@@ -86,11 +98,19 @@ h2 .colorBox {
 @media screen and (min-width: 768px) and (max-width: 1200px) {
 	h1 {
 		font-size: 4rem;
-		line-height: 1.2;
+		line-height: 1;
 	}
 	h2.subtitle {
-		padding-left: 0.2rem;
 		font-size: 1.2rem;
+		padding: 10px 0;
+	}
+	h1 .colorBox {
+		height: 75px;
+		width: 615px;
+	}
+	h2 .colorBox {
+		height: 25px;
+		width: 250px;
 	}
 }
 
@@ -99,7 +119,7 @@ h2 .colorBox {
 */
 @media screen and (min-width: 1200px) {
 	h1 {
-		font-size: 7rem;
+		font-size: 6rem;
 		line-height: 1.2;
 	}
 }

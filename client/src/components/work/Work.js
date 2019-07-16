@@ -22,7 +22,7 @@ export default class Work extends Component {
                     </div>
                     <div id="realisations-container">
                         {this.state.projets.map((projet, index) => (
-                            <div className="realisation" style={{ "--delai": (index * 0.2) + "s" }}>
+                            <div key={index} className="realisation" style={{ "--delai": (index * 0.2) + 0.5 + "s" }}>
                                 <div className="realisation-inner">
                                     <div className="realisation-text">
                                         <h3

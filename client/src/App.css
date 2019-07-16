@@ -28,3 +28,30 @@
 		opacity: 1;
 	}
 }
+
+/* COMPONENTS FADE */
+.transitionGroup {
+	flex: 1;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 100%;
+	grid-template-areas: "main";
+	height: 100%;
+}
+.fade-enter {
+	opacity: 0;
+	z-index: 1;
+	grid-area: main;
+}
+.fade-enter.fade-enter-active {
+	opacity: 1;
+	transition: opacity 0.5s ease;
+}
+.fade-exit {
+	opacity: 1;
+	grid-area: main;
+}
+.fade-exit.fade-exit-active {
+	opacity: 0;
+	transition: opacity 0.5s ease;
+}
