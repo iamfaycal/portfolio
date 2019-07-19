@@ -32,7 +32,7 @@ export default class About extends Component {
                                         ]
                                     },
                                     "CMS": {
-                                        "Wordpress": "Développement de modules en PHP"
+                                        "Wordpress": "Développement PHP"
                                     },
                                     "server, api & backend": [
                                         "Apache",

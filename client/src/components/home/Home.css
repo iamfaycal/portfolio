@@ -1,20 +1,13 @@
 /* 
     === ALL ===
 */
-div.home {
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	flex: 1;
-}
 /*
     HEADING
 */
 div.heading {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
 }
 h1 {
 	margin: 0;
@@ -28,7 +21,6 @@ h2.subtitle {
 .colorBox {
 	z-index: 100;
 	position: absolute;
-	animation: 0.5s 2 alternate slidein;
 	transform-origin: left;
 	transform: scaleX(0);
 }
@@ -36,20 +28,18 @@ h1 .colorBox {
 	background-color: #0c6980;
 	height: 115px;
 	width: 950px;
-	animation: 0.5s 2 alternate slidein;
-	animation-delay: 0.7s;
+	animation: 0.5s 2 1.7s alternate slidein;
 }
 h1 .text,
 h2 .text {
 	opacity: 0;
-	animation: showText 0s 1.2s forwards;
+	animation: showText 0s 2.2s forwards;
 }
 h2 .colorBox {
 	background-color: #2eb5e0;
 	height: 50px;
 	width: 370px;
-	animation: 0.3s 2 alternate slidein;
-	animation-delay: 1s;
+	animation: 0.3s 2 2s alternate slidein;
 }
 @keyframes slidein {
 	from {

@@ -20,7 +20,7 @@ export default class Nav extends Component {
                 </ul>
                 <ul>
                     <li>
-                        <Link to="https://www.linkedin.com/in/faycal-hammoudi/" target="_blank" rel="noopener noreferrer">LinkedIn</Link>
+                        <a href="https://www.linkedin.com/in/faycal-hammoudi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
                     </li>
                 </ul>
                 {/*

@@ -8,7 +8,7 @@ export default class Work extends Component {
         projets: null
     };
     componentDidMount() {
-        const url = "https://faycalhammoudi.fr/wp-json/wp/v2/project";
+        const url = "https://188.165.53.185/wp-json/wp/v2/project";
         fetch(url)
             .then(res => res.json())
             .then(projets => this.setState({ projets }));
@@ -16,9 +16,9 @@ export default class Work extends Component {
     render() {
         if (this.state.projets) {
             return (
-                <div>
+                <div id="realisations">
                     <div id="pageTitle">
-                        <h2>réalisations</h2>
+                        <h1>réalisations</h1>
                     </div>
                     <div id="realisations-container">
                         {this.state.projets.map((projet, index) => (
@@ -34,7 +34,6 @@ export default class Work extends Component {
                                             {}
                                         </h3>
                                         <hr />
-                                        {/*<h4>Une lègère description</h4>*/}
                                         <Link
                                             to={`/realisations/${
                                                 projet.slug
@@ -45,9 +44,7 @@ export default class Work extends Component {
                                     </div>
                                     <div className="realisation-image-container">
                                         <Link
-                                            to={`/realisations/${
-                                                projet.slug
-                                                }`}
+                                            to={`/realisations/${projet.slug}`}
                                         >
                                             <img
                                                 src={projet.acf.project_img}

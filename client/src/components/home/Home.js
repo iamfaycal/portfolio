@@ -4,7 +4,7 @@ import "./Home.css";
 export default class Home extends Component {
     render() {
         return (
-            <div className="home">
+            <div id="home">
                 <div className="heading">
                     <h1>
                         <span className="colorBox" />

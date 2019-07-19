@@ -18,7 +18,7 @@ export default class Single extends Component {
     render() {
         if (this.state.projet) {
             return (
-                <div>
+                <div id="realisation">
                     <div id="pageTitle">
                         <Link to="/realisations">&larr; Retour</Link>
                         <h2
@@ -55,7 +55,7 @@ export default class Single extends Component {
                 </div>
             );
         } else {
-            return "Loading";
+            return (<div>Loading</div>);
         }
     }
 }

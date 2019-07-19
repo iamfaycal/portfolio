@@ -1,9 +1,7 @@
 import React, { Component, /*lazy, Suspense*/ } from "react";
-import uuid from "uuid";
 // import Login from "./components/admin/login/Login";
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Spinner from "./assets/spinner.gif";
 import "./App.css";
 
 import Home from "./components/home/Home";
@@ -21,7 +19,7 @@ class App extends Component {
                     <div className="wrapper">
                         <Nav />
                         <TransitionGroup className="transitionGroup">
-                            <CSSTransition key={location.key} timeout={1000} classNames="fade">
+                            <CSSTransition key={location.key} timeout={1500} classNames="fade">
                                 <React.Fragment>
                                     <Switch location={location}>
                                         <Route exact path="/" component={Home} />
@@ -29,10 +27,10 @@ class App extends Component {
                                         <Route exact path="/realisations" component={Work} />
                                         <Route path="/realisations/:slug" component={Single} />
                                     </Switch>
-                                    <Footer />
                                 </React.Fragment>
                             </CSSTransition>
                         </TransitionGroup>
+                        <Footer />
                     </div>
                 )} />
             </BrowserRouter>
