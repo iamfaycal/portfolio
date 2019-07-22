@@ -8,7 +8,7 @@ export default class Work extends Component {
         projets: null
     };
     componentDidMount() {
-        const url = "https://188.165.53.185/wp-json/wp/v2/project";
+        const url = "http://faycalhauv.cluster021.hosting.ovh.net/wp-json/wp/v2/project";
         fetch(url)
             .then(res => res.json())
             .then(projets => this.setState({ projets }));
@@ -22,7 +22,7 @@ export default class Work extends Component {
                     </div>
                     <div id="realisations-container">
                         {this.state.projets.map((projet, index) => (
-                            <div key={index} className="realisation" style={{ "--delai": (index * 0.2) + 0.5 + "s" }}>
+                            <div key={index} className="realisation" style={{ "--delai": (index * 0.1) + 0.5 + "s" }}>
                                 <div className="realisation-inner">
                                     <div className="realisation-text">
                                         <h3

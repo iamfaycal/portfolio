@@ -28,18 +28,21 @@ h1 .colorBox {
 	background-color: #0c6980;
 	height: 115px;
 	width: 950px;
-	animation: 0.5s 2 1.7s alternate slidein;
+	animation: 0.5s 2 0.5s alternate slidein;
 }
-h1 .text,
+h1 .text {
+	opacity: 0;
+	animation: showText 0s 1s forwards;
+}
 h2 .text {
 	opacity: 0;
-	animation: showText 0s 2.2s forwards;
+	animation: showText 0s 1s forwards;
 }
 h2 .colorBox {
 	background-color: #2eb5e0;
 	height: 50px;
 	width: 370px;
-	animation: 0.3s 2 2s alternate slidein;
+	animation: 0.3s 2 0.7s alternate slidein;
 }
 @keyframes slidein {
 	from {

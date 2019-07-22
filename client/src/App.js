@@ -10,6 +10,7 @@ import Single from "./components/work/Single";
 import Nav from "./components/nav/Nav";
 import Footer from "./components/footer/Footer";
 import About from "./components/about/About";
+import Contact from "./components/contact/Contact";
 
 class App extends Component {
     render() {
@@ -23,9 +24,10 @@ class App extends Component {
                                 <React.Fragment>
                                     <Switch location={location}>
                                         <Route exact path="/" component={Home} />
-                                        <Route path="/a-propos" component={About} />
                                         <Route exact path="/realisations" component={Work} />
                                         <Route path="/realisations/:slug" component={Single} />
+                                        <Route path="/a-propos" component={About} />
+                                        <Route path="/contact" component={Contact} />
                                     </Switch>
                                 </React.Fragment>
                             </CSSTransition>

@@ -52,55 +52,6 @@
 	background: #0c6980;
 	color: white;
 }
-@media screen and (min-width: 960px) {
-	#realisations-container
-		> .realisation
-		> .realisation-inner
-		> .realisation-image-container
-		> a {
-		margin-left: -70px;
-	}
-	#realisations-container {
-		flex-direction: row;
-	}
-	#realisations-container > .realisation {
-		width: 48%;
-	}
-	#realisations-container > .realisation > .realisation-inner {
-		flex-direction: row;
-		justify-content: space-between;
-	}
-	#realisations-container
-		> .realisation
-		> .realisation-inner
-		> .realisation-text {
-		width: 45%;
-		height: 250px;
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-
-		margin-top: 30px;
-		position: relative;
-		z-index: 999;
-	}
-	#realisations-container
-		> .realisation
-		> .realisation-inner
-		> .realisation-text
-		> h3 {
-		margin: 6px 0;
-		font-size: 20px;
-	}
-	#realisations-container
-		> .realisation
-		> .realisation-inner
-		> .realisation-image-container {
-		display: flex;
-		width: 70%;
-	}
-}
-
 #realisations-container
 	> .realisation
 	> .realisation-inner
@@ -163,6 +114,63 @@
 	> img {
 	width: 100%;
 	position: relative;
+}
+@media screen and (min-width: 1280px) {
+	#realisations-container {
+		flex-direction: row;
+	}
+	#realisations-container > .realisation {
+		width: 48%;
+	}
+	#realisations-container > .realisation > .realisation-inner {
+		flex-direction: row;
+		justify-content: space-between;
+	}
+	#realisations-container
+		> .realisation
+		> .realisation-inner
+		> .realisation-image-container {
+		display: flex;
+		width: 70%;
+	}
+	#realisations-container
+		> .realisation
+		> .realisation-inner
+		> .realisation-image-container
+		> a {
+		margin-left: -70px;
+	}
+	#realisations-container
+		> .realisation
+		> .realisation-inner
+		> .realisation-text {
+		min-width: 250px;
+		width: 250px;
+		height: 250px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		margin-top: 30px;
+		position: relative;
+		z-index: 999;
+	}
+	#realisations-container
+		> .realisation
+		> .realisation-inner
+		> .realisation-text
+		> h3 {
+		margin: 5px 0;
+		font-size: 40px;
+	}
+	#realisations-container
+		> .realisation
+		> .realisation-inner
+		> .realisation-text
+		> a {
+		margin: 6px 0;
+		font-size: 20px;
+	}
 }
 
 /*
