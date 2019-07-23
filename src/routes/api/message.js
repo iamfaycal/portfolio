@@ -4,7 +4,9 @@ const helper = require('sendgrid').mail;
 
 router.post("/", (req, res) => {
     console.log(req.body);
-    var from_email = new helper.Email('test@example.com');
+    console.log(req.body.name);
+
+    /*var from_email = new helper.Email('test@example.com');
     var to_email = new helper.Email('contact@faycalhammoudi.fr');
     var subject = 'Hello World from the SendGrid Node.js Library!';
     var content = new helper.Content('text/plain', 'Hello, Email!');
@@ -21,7 +23,8 @@ router.post("/", (req, res) => {
         console.log(res.statusCode);
         console.log(res.body);
         console.log(res.headers);
-    });
+    });*/
+    res.send({ message: "sent" });
 });
 
 module.exports = router;
