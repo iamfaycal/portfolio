@@ -1,0 +1,52 @@
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	margin-bottom: 50px;
+}
+form .input-group {
+	position: relative;
+	margin-bottom: 10px;
+}
+form .input-group .material-icons {
+	position: absolute;
+	top: 50%;
+	left: 10px;
+	transform: translateY(-50%);
+}
+/* Change Autocomplete styles in Chrome*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	-webkit-text-fill-color: inherit;
+	-webkit-box-shadow: 0 0 0px 30px white inset;
+}
+form input,
+form textarea {
+	padding: 15px 20px;
+	font-family: inherit;
+	width: 400px;
+	border: 1px solid lightgray;
+	border-radius: 3px;
+}
+form input[type="submit"] {
+	cursor: pointer;
+}
+form input[type="text"],
+form input[type="email"] {
+	padding: 15px 20px 15px 50px;
+}
+form input:focus,
+form textarea:focus {
+	outline: none;
+}
+form textarea {
+	height: 200px;
+	resize: none;
+}

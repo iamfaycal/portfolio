@@ -1,20 +1,21 @@
 {
-  "name": "portfolio",
-  "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "server": "nodemon /src/server.js",
-    "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
-  },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1",
-    "mongoose": "^5.6.0"
-  },
-  "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.19.1"
-  }
+	"name": "portfolio",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"server": "nodemon ./src/server.js",
+		"client": "npm start --prefix client",
+		"dev": "concurrently \"npm run server\" \"npm run client\""
+	},
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"express": "^4.17.1",
+		"mongoose": "^5.6.0",
+		"sendgrid": "^5.2.3"
+	},
+	"devDependencies": {
+		"concurrently": "^4.1.0",
+		"nodemon": "^1.19.1"
+	}
 }
