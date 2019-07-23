@@ -16,12 +16,15 @@ router.post("/", (req, res) => {
         body: mail.toJSON(),
     });
 
-    sg.API(request, (error, res) => {
-        console.log(res.statusCode);
-        console.log(res.body);
-        console.log(res.headers);
+    sg.API(request, (error, result) => {
+        if (result.statusCode == 202) {
+            res.status(202);
+            res.send('Ok');
+        } else if (error) {
+            res.status(503);
+            res.send('Error');
+        }
     });
-    res.send({ message: "sent" });
 });
 
 module.exports = router;
