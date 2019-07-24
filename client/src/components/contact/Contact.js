@@ -20,11 +20,11 @@ export default class Contact extends Component {
 
     render() {
         return (
-            <div id="Contact">
+            <div id="contact">
                 <div id="pageTitle">
                     <h1>contact</h1>
                 </div>
-                <form>
+                <form className="fadeIn">
                     <p><strong>Pour me contacter,<br />merci d'utiliser le formulaire ci-dessous</strong></p>
                     <div className="input-group">
                         <i className="material-icons">person</i>
@@ -65,7 +65,7 @@ export default class Contact extends Component {
             body: JSON.stringify(this.state)
         })
             .then(res => {
-                if (res.status === 503) {
+                if (res.status === 400) {
                     res.text()
                         .then(text => {
                             this.setState({
