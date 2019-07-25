@@ -8,7 +8,7 @@ export default class Work extends Component {
         projets: null
     };
     componentDidMount() {
-        const url = "http://faycalhauv.cluster021.hosting.ovh.net/wp-json/wp/v2/project";
+        const url = "//faycalhauv.cluster021.hosting.ovh.net/wp-json/wp/v2/project";
         fetch(url)
             .then(res => res.json())
             .then(projets => this.setState({ projets }));

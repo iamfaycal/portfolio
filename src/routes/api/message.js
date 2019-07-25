@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const sendgrid = require('sendgrid');
+const sendgrid = require('@sendgrid/mail');
 const fetch = require("node-fetch");
 
 router.post("/", (req, res) => {
