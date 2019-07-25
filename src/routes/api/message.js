@@ -1,11 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const helper = require('sendgrid').mail;
+const sendgrid = require('sendgrid');
 const fetch = require("node-fetch");
 
 router.post("/", (req, res) => {
-    // ReCaptcha verification
+    // Empty fields verification
     if (req.body.name && req.body.email && req.body.message && req.body.recaptcha) {
+        // ReCaptcha verification
         fetch("https://www.google.com/recaptcha/api/siteverify", {
             method: 'POST',
             headers: {
@@ -16,28 +17,30 @@ router.post("/", (req, res) => {
             .then(res => res.json())
             .then(json => {
                 if (json.success) {
-                    var from_email = new helper.Email(req.body.email, req.body.name);
-                    var to_email = new helper.Email('contact@faycalhammoudi.fr');
-                    var subject = 'Message de la part de ' + req.body.name;
-                    var content = new helper.Content('text/plain', req.body.message);
-                    var mail = new helper.Mail(from_email, subject, to_email, content);
-
-                    var sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
-                    var request = sg.emptyRequest({
-                        method: 'POST',
-                        path: '/v3/mail/send',
-                        body: mail.toJSON(),
-                    });
-
-                    sg.API(request, (error, result) => {
-                        if (result.statusCode == 202) {
-                            res.status(202);
-                            res.send('Ok');
-                        } else if (error) {
-                            res.status(400);
-                            res.send("Votre message n'a pas pu être envoyé, veuillez reessayer plus tard");
-                        }
-                    });
+                    // Email validation
+                    if (emailIsValid(req.body.email)) {
+                        // Sending the email
+                        sendgrid.setApiKey(process.env.SENDGRID_API_KEY);
+                        const email = {
+                            to: 'contact@faycalhammoudi.fr',
+                            from: req.body.name + ' <' + req.body.email + '>',
+                            subject: 'Message reçu de la part de ' + req.body.name,
+                            text: req.body.message,
+                        };
+                        sendgrid.send(email)
+                            .then(() => {
+                                res.status(200);
+                                res.send('Votre message a bien été envoyé, je vous réponderai dans les plus bref délai !');
+                            })
+                            .catch(err => {
+                                console.log(err);
+                                res.status(400);
+                                res.send("Votre message n'a pas pu être envoyé, veuillez reessayer plus tard");
+                            })
+                    } else {
+                        res.status(400);
+                        res.send('Veuillez entrer une adresse email valide');
+                    }
                 } else {
                     res.status(400);
                     res.send('ReCaptcha incorrect');
@@ -53,5 +56,9 @@ router.post("/", (req, res) => {
         res.send('Veuillez renseigner tous les champs du formulaire ainsi que la verification ReCaptcha');
     }
 });
+
+function emailIsValid(email) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
+}
 
 module.exports = router;

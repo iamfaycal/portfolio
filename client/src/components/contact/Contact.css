@@ -66,6 +66,28 @@ form textarea {
 #alert {
 	width: 400px;
 	max-width: 100%;
+	transform-origin: 0 0;
+	transform: scaleY(0);
+	color: white;
+	padding: 10px 20px;
+	border-radius: 3px;
+	margin-bottom: 10px;
+}
+@keyframes unroll {
+	from {
+		transform: scaleY(0);
+	}
+	to {
+		transform: scaleY(1);
+	}
+}
+#alert.error {
+	background: lightcoral;
+	animation: unroll 1s forwards ease;
+}
+#alert.success {
+	background: lightseagreen;
+	animation: unroll 1s forwards ease;
 }
 #map {
 	max-width: 100%;

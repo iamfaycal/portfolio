@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
+import ReCAPTCHA from "react-google-recaptcha";
 import 'material-design-icons/iconfont/material-icons.css';
 import './Contact.css';
-import ReCAPTCHA from "react-google-recaptcha";
 
 export default class Contact extends Component {
     state = {
-        name: "",
-        email: "",
-        message: "",
-        recaptcha: "",
-        alert: ""
+        payload: {
+            name: "",
+            email: "",
+            message: "",
+            recaptcha: "",
+        },
+        alert: "",
+        alertClass: ""
     }
     constructor(props) {
         super(props)
@@ -26,6 +29,7 @@ export default class Contact extends Component {
                 </div>
                 <form className="fadeIn">
                     <p><strong>Pour me contacter,<br />merci d'utiliser le formulaire ci-dessous</strong></p>
+                    <div id="alert" class={this.state.alertClass}>{this.state.alert}</div>
                     <div className="input-group">
                         <i className="material-icons">person</i>
                         <input type="text" name="name" placeholder="Votre nom" onChange={e => this.update(e)} />
@@ -47,7 +51,6 @@ export default class Contact extends Component {
                     <div className="input-group">
                         <input type="submit" value="Envoyer &rarr;" onClick={e => this.submitMessage(e)} />
                     </div>
-                    <div id="alert">{this.state.alert}</div>
                 </form>
                 <iframe title="map" id="map" width="800px" height="500px" frameBorder="0" allowFullScreen src="https://umap.openstreetmap.fr/fr/map/faycalhammoudi_349017?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=false&allowEdit=false&moreControl=false&searchControl=false&tilelayersControl=false&embedControl=false&datalayersControl=false&onLoadPanel=undefined&captionBar=false&fullscreenControl=false&locateControl=false&measureControl=false&editinosmControl=false#14/47.7469/7.3384"></iframe>
             </div>
@@ -62,15 +65,25 @@ export default class Contact extends Component {
             headers: {
                 "Content-type": "application/json"
             },
-            body: JSON.stringify(this.state)
+            body: JSON.stringify(this.state.payload)
         })
             .then(res => {
-                if (res.status === 400) {
+                if (res.status !== 200) {
                     res.text()
                         .then(text => {
                             this.setState({
                                 ...this.state,
-                                alert: text
+                                alert: text,
+                                alertClass: 'error'
+                            })
+                        })
+                } else {
+                    res.text()
+                        .then(text => {
+                            this.setState({
+                                ...this.state,
+                                alert: text,
+                                alertClass: 'success'
                             })
                         })
                 }
@@ -81,13 +94,19 @@ export default class Contact extends Component {
     update(e) {
         this.setState({
             ...this.state,
-            [e.target.name]: e.target.value
+            payload: {
+                ...this.state.payload,
+                [e.target.name]: e.target.value
+            }
         })
     }
     captchaUpdate(val) {
         this.setState({
             ...this.state,
-            recaptcha: val
+            payload: {
+                ...this.state.payload,
+                recaptcha: val
+            }
         })
     }
 }
