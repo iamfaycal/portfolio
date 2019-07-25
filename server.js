@@ -4,11 +4,11 @@ const path = require('path');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 5000;
-const db = require("../config").mongoURI;
+const db = require("./config").mongoURI;
 
 // const login = require("./routes/api/login");
 // const realisations = require("./routes/api/realisations");
-const message = require("./routes/api/message");
+const message = require("./src/routes/api/message");
 
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -22,7 +22,7 @@ app.use("/api/message", message);
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));
     app.get('/*', (req, res) => {
-        res.sendFile(path.join('../client/build/index.html'));
+        res.sendFile(path.join(__dirname, 'client/build/index.html'));
     })
 }
 
