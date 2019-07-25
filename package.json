@@ -14,8 +14,7 @@
 	"dependencies": {
 		"express": "^4.17.1",
 		"mongoose": "^5.6.0",
-		"node-fetch": "^2.6.0",
-		"sendgrid": "^5.2.3"
+		"node-fetch": "^2.6.0"
 	},
 	"devDependencies": {
 		"concurrently": "^4.1.0",
