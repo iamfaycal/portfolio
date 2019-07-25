@@ -19,7 +19,7 @@
 
 /* TITLE */
 #pageTitle {
-	margin: 100px 0 80px;
+	margin: 70px 0 50px;
 	opacity: 0;
 	animation: fadeInSkew 0.8s 0.5s forwards ease;
 }

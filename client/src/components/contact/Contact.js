@@ -52,7 +52,6 @@ export default class Contact extends Component {
                         <input type="submit" value="Envoyer &rarr;" onClick={e => this.submitMessage(e)} />
                     </div>
                 </form>
-                <iframe title="map" id="map" width="800px" height="500px" frameBorder="0" allowFullScreen src="https://umap.openstreetmap.fr/fr/map/faycalhammoudi_349017?scaleControl=false&miniMap=false&scrollWheelZoom=false&zoomControl=false&allowEdit=false&moreControl=false&searchControl=false&tilelayersControl=false&embedControl=false&datalayersControl=false&onLoadPanel=undefined&captionBar=false&fullscreenControl=false&locateControl=false&measureControl=false&editinosmControl=false#14/47.7469/7.3384"></iframe>
             </div>
         )
     }
