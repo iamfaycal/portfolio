@@ -12,7 +12,7 @@ router.post("/", (req, res) => {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: "secret=6Lc7WBIUAAAAADc7NyFymecOOYDL454YUJ3yGotb&response=" + req.body.recaptcha + "&remoteip=" + req.ip
+            body: "secret=" + process.env.RECAPTCHA_API + "&response=" + req.body.recaptcha + "&remoteip=" + req.ip
         })
             .then(res => res.json())
             .then(json => {
