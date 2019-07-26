@@ -1,10 +1,14 @@
 const express = require("express");
+const sslRedirect = require('heroku-ssl-redirect');
 const app = express();
 const path = require('path');
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const port = process.env.PORT || 5000;
 const db = require("./config").mongoURI;
+
+// Redirects HTTP requests to HTTPS
+app.use(sslRedirect());
 
 // const login = require("./routes/api/login");
 // const realisations = require("./routes/api/realisations");
